@@ -1,0 +1,25 @@
+.head-container{
+    display:flex;
+    justify-content:space-between;
+    padding: 20px;
+    background-color: rgb(85, 122, 208);
+    align-items: center;
+}
+
+h1{
+    color: rgb(25, 37, 63);
+    text-shadow: 1px 1px 2px rgb(61, 86, 145),
+    0 0 1em rgb(87, 123, 209),
+    0 0 0.2em rgb(111, 145, 224);
+}
+
+button{
+    height: fit-content;
+    padding: 9px 13px;
+    background-color: rgb(39, 57, 98) ;
+    color: rgb(189, 200, 245);
+    font-weight: bold;
+    border-radius: 20px;
+    border-color: rgb(156, 181, 238);
+    cursor: pointer;
+}
