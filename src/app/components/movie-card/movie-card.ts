@@ -14,13 +14,17 @@ export class MovieCard implements OnInit{
   route=inject(ActivatedRoute)
   movieId:number=0
   movie:Movie|null=null
+  buttonDisabled:boolean=false
   movieService=inject(MovieService)
   ngOnInit(): void {
     this.movieId=this.route.snapshot.params['id']
+    if(this.movieService.wishlist.find(movie=>movie.id==this.movieId))
+      this.buttonDisabled=true
     this.movieService.getMovieById(this.movieId).subscribe(
       Response=>this.movie=Response)
   }
   addToWishList(movie:Movie){
-    this.movieService.wishlist.push()
+    this.movieService.wishlist.push(movie)
+    this.buttonDisabled=true
   }
 }

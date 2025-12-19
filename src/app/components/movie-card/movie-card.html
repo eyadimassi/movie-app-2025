@@ -7,7 +7,7 @@
             <h1>
                 {{movie.title}}
             </h1>
-            <button (click)="addToWishList(movie)">Add to my wishlist</button>
+            <button (click)="addToWishList(movie)" [disabled]="buttonDisabled">Add to my wishlist</button>
             <p>
                 <span>Original title</span>{{movie.original_title}}<br />
                 <span>Original language</span>{{movie.original_language}}<br />
