@@ -11,10 +11,14 @@ export class MovieService {
 
   private http=inject(HttpClient)
   private apikey = environment.apikey
+  public wishlist:Movie[]=[]
 
   public movieList:Movie[]=[]
   getMovieList():Observable<Movie[]>{
     return this.http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apikey}`).pipe(map((Response:any)=>Response.results))
+  }
+  getMovieById(id:number):Observable<Movie>{
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.apikey}`).pipe(map((Response:any)=>Response))
   }
   
 }

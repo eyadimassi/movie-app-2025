@@ -1,5 +1,5 @@
 <div class="movie-list">
-    @for (movie of movieService.movieList; track movie.id) {
+    @for (movie of movieService.wishlist; track movie.id) {
     <div class="movie-card" (click)="navigateTo(movie.id)">
         <div class="movie-poster">
             <img [src]="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`">
